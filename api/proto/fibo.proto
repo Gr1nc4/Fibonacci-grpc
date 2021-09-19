@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./pkg/api";
+
+package api;
+
+service FiboNum {
+  rpc Fibo (FiboReq) returns (FiboResp){}
+}
+
+message FiboReq  {
+  int64 x =1;
+}
+
+message FiboResp {
+  int64 result =1;
+}
