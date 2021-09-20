@@ -10,6 +10,7 @@ import (
 )
 
 func main(){
+	//Add args launch
 	flag.Parse()
 	if flag.NArg() < 2{
 		log.Fatal("нет аргументов, нужен 1 оргумент!")
@@ -22,16 +23,15 @@ func main(){
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	//Set connection
 	conn, err := grpc.Dial(":8080", grpc.WithInsecure())
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	c := api.NewFiboNumClient(conn)
-
+	//Get fibonacci sequence
 	for i := x; i <= y; i++ {
-
 		res, err := c.Fibo(context.Background(), &api.FiboReq{X: int32(i)})
 		if err != nil {
 			log.Fatal(err)

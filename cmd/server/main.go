@@ -9,6 +9,7 @@ import (
 )
 
 func main(){
+	//Launch grpc server
 	s := grpc.NewServer()
 	srv := &fibo.GRPCServer{}
 	api.RegisterFiboNumServer(s, srv)
