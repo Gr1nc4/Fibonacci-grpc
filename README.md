@@ -8,7 +8,7 @@ gRPC Fibonacci sequence application
 
 На компьютере должен быть установлен go v1.16
 
-#Запуск
+# Запуск
 Скопируйте этот репозитоорий с помощью git clone github.com/Gr1nc4/Fibonacci-grpc в GOPATH/src .
 
 Запустите сервер go run cmd/server/main.go 
