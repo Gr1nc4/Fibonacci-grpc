@@ -13,7 +13,7 @@ func main(){
 	//Add args launch
 	flag.Parse()
 	if flag.NArg() < 2{
-		log.Fatal("нет аргументов, нужен 1 оргумент!")
+		log.Fatal("Нужно 2 оргумента!")
 	}
 	x, err := strconv.Atoi(flag.Arg(0))
 	if err != nil {
