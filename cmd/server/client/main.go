@@ -13,7 +13,7 @@ func main(){
 	//Add args launch
 	flag.Parse()
 	if flag.NArg() < 2{
-		log.Fatal("Нужно 2 оргумента!")
+		log.Fatal("нет аргументов, нужно 2 оргумента!")
 	}
 	x, err := strconv.Atoi(flag.Arg(0))
 	if err != nil {
@@ -31,11 +31,9 @@ func main(){
 
 	c := api.NewFiboNumClient(conn)
 	//Get fibonacci sequence
-	for i := x; i <= y; i++ {
-		res, err := c.Fibo(context.Background(), &api.FiboReq{X: int32(i)})
+		res, err := c.Fibo(context.Background(), &api.FiboReq{X: int64(x), Y: int64(y)})
 		if err != nil {
 			log.Fatal(err)
 		}
 		log.Println(res.GetResult())
-	}
 }
